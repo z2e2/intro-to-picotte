@@ -42,7 +42,7 @@ Most of the time, the default partition is good enough for you to run your job. 
 
 2. Second, you need to consider if your job needs a lot of I/O operations, i.e., load/write data from/to the disk frequently. In those cases, you want to change the output directory in your command to Fast parallel scratch (you need to create a directory in `/beegfs/scratch`, write to the fast scratch space and copy the data to your own directory or the group folder when the job is done). This process depends on the software you are running, so this step is something you need to consider yourself and there is no universal solution.
 
-3. Then you can consider the modules that you want to load and the commands you want to run. You can keep the commands in a separate file and execute that file in your job script. Or, if there are only a few commands to run, you can just keep it in the job script. Here, I adapted a job script template from the Picotte wiki page. This job script template prints out the python version as an example. The job script has a header section used to specify the partition information, run time etc. You should read the comment left in the template to understand the header section.
+3. Then you can consider the modules that you want to load and the commands you want to run. You can keep the commands in a separate file and execute that file in your job script. Or, if there are only a few commands to run, you can just keep it in the job script. Here, I adapted a job script template from the Picotte wiki page. This job script template prints out the python version as an example. The job script has a header section used to specify the partition information, run time etc. You should read the comment left in the template to understand the header section. You at least need to change the email address in this job script to your drexel email and the account to the account associated with this class (you will need to consult with the instructor for the account information).
 ```bash
 #!/bin/bash
 #
@@ -95,6 +95,8 @@ where $JOBID is the job id associated with your job script (a few digits number)
 * For more information, check the [slurm page](https://proteusmaster.urcf.drexel.edu/urcfwiki/index.php/Slurm_Quick_Start_Guide#Overview). 
 
 6. It can still be tough to debug your code because you don't have instant feedback. I would recommend you to use an interactive session. Once the interative session is activated, you can directly run commands in your terminal. However, it is not a good practice to run commands that runs for too long in the interactive session because your terminal not got terminated by your OS due to, e.g., the screensaver process. If you are interested in this feature, please refer to [Interactive Terminal Sessions on Compute Nodes](https://proteusmaster.urcf.drexel.edu/urcfwiki/index.php/Interactive_Terminal_Sessions_on_Compute_Nodes).
+
+7. For more advanced usage, please go over [Writing Slurm Job Scripts](https://proteusmaster.urcf.drexel.edu/urcfwiki/index.php/Writing_Slurm_Job_Scripts) and [A list of job script examples](https://proteusmaster.urcf.drexel.edu/urcfwiki/index.php/Category:Examples).
 
 # New to BASH?
 Bash programming is essential for you to navigate and manage your files/directoroes in Picotte. If you are interested in a [Bash tutorial](https://nbviewer.jupyter.org/github/gditzler/bio-course-materials/blob/master/notebooks/Bash-Tutorial.ipynb), please go ahead and go over it.
